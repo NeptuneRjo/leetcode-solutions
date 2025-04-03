@@ -26,15 +26,19 @@ class Solution:
         storedNums = {}
 
         for index, value in enumerate(nums):
-            # the only numbers we have access to are  
-            # the target and the value of the current indice
+            # target = value + x
+            # to find x we need to subtract the current value from the target value
             difference = target - value
 
-            # we check if the difference between the target and the current value
-            # is already stored and return the index of the difference and current value
+            """
+            we check if the difference between the target and the current value
+            is already stored and return the index of the difference and current value
+            """
             if difference in storedNums:
                 return [storedNums[difference], index]
 
-            # if they dont find the target, store it in the dictionary
-            # store the index of the current value
+            """
+            if they dont find the target, store it in the dictionary
+            store the index of the current value
+            """
             storedNums[value] = index
